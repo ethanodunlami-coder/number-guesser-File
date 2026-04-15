@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This tells the browser what kind of document this is -->
+  <meta charset="UTF-8" />
+
+  <!-- This makes the page look good on mobile screens too -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- This is the title that shows in the browser tab -->
+  <title>Number Guesser Game</title>
+
+  <!-- This links our CSS file so the page looks nice -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =============================================
+       GAME CARD — Everything sits inside this box
+  ============================================== -->
+  <div class="card">
+
+    <!-- The emoji at the top of the card -->
+    <div class="emoji" id="game-emoji">🎯</div>
+
+    <!-- The main title of the game -->
+    <h1>Number Guesser</h1>
+
+    <!-- Subtitle — tells the player what range to guess from -->
+    <p class="subtitle">I'm thinking of a number between <strong>1</strong> and <strong>100</strong>.</p>
+
+    <!-- =============================================
+         INPUT AREA — Where the player types their guess
+    ============================================== -->
+    <div class="input-area">
+
+      <!-- The text box where the player types a number -->
+      <!-- type="number" only allows numbers to be typed -->
+      <!-- min and max set the allowed range -->
+      <!-- placeholder is the grey hint text inside the box -->
+      <input
+        type="number"
+        id="guess-input"
+        min="1"
+        max="100"
+        placeholder="Type your guess here..."
+      />
+
+      <!-- The button the player clicks to submit their guess -->
+      <button id="guess-btn">Guess! 🎲</button>
+
+    </div>
+
+    <!-- =============================================
+         MESSAGE AREA — Shows hints like "Too high!" or "Correct!"
+    ============================================== -->
+    <div class="message-box" id="message-box">
+      <!-- JavaScript will put messages here -->
+      Can you guess the number?
+    </div>
+
+    <!-- =============================================
+         STATS BAR — Shows attempts and the range
+    ============================================== -->
+    <div class="stats">
+
+      <!-- Shows how many guesses the player has made -->
+      <div class="stat">
+        <span class="stat-label">Attempts</span>
+        <span class="stat-value" id="attempts-count">0</span>
+      </div>
+
+      <!-- Shows the current possible range to help the player narrow it down -->
+      <div class="stat">
+        <span class="stat-label">Range</span>
+        <span class="stat-value" id="range-display">1 – 100</span>
+      </div>
+
+    </div>
+
+    <!-- =============================================
+         RESULT AREA — Hidden until the game ends
+    ============================================== -->
+    <div class="result-area hidden" id="result-area">
+
+      <!-- Shows a win or lose message -->
+      <p id="result-message">You got it!</p>
+
+      <!-- The Play Again button — hidden until the game ends -->
+      <button id="restart-btn">Play Again 🔁</button>
+
+    </div>
+
+  </div><!-- End of .card -->
+
+
+  <!-- =============================================
+       SCRIPT TAG — Links our JavaScript file
+       Always put this at the BOTTOM of the body
+       so the HTML loads before the JavaScript runs
+  ============================================== -->
+
+
+</body>
+</html>
